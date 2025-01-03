@@ -1,5 +1,4 @@
 from flask import Flask, jsonify, Response
-from Gemini_GetApi_Class import GetApi  # Import your script
 from Create_MemePhoto import CreateMeme
 
 app = Flask(__name__)

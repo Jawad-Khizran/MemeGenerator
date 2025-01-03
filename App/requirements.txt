@@ -1,7 +1,8 @@
-pymongo
-flask
+google-generativeai
+Flask
 awscli
+boto3
 botocore
 pymongo
-boto3
 pillow
+textblob

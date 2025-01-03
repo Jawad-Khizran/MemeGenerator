@@ -1,6 +1,5 @@
 flask
-Pillow
 requests
-git+https://github.com/google/generative-ai-python.git
+google-generativeai
 textblob
 pillow
