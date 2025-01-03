@@ -8,7 +8,7 @@ cd
 mkdir App
 mkdir .aws
 cd App
-git clone https://github.com/roee4643/MemeGenerator
+git clone https://github.com/Jawad-Khizran/MemeGenerator
 cd ..
 
 # Ensure that pip is installed and is the latest version

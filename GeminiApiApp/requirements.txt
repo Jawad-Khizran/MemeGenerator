@@ -1,4 +1,0 @@
-Flask
-git+https://github.com/google/generative-ai-python.git
-textblob
-pillow

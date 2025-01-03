@@ -1,0 +1,7 @@
+pymongo
+flask
+awscli
+botocore
+pymongo
+boto3
+pillow
