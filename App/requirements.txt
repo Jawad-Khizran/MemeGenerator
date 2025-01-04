@@ -1,8 +1,0 @@
-google-generativeai
-Flask
-awscli
-boto3
-botocore
-pymongo
-pillow
-textblob
