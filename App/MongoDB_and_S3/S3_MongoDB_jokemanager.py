@@ -13,7 +13,6 @@ class S3AndMongoDBJokeManager:
         self.client = MongoClient(mongo_uri)
         self.db = self.client[db_name]
         self.collection = self.db['jokes']
-        # self.collection = self.db['jokes']  # Collection for jokes
 
     def create_bucket(self):
         """
@@ -27,8 +26,7 @@ class S3AndMongoDBJokeManager:
                 print(f"Creating bucket '{self.bucket_name}'...")
                 try:
                     region = boto3.session.Session().region_name
-                    if region == 'us-east-1':
-                        # In 'us-east-1', no location constraint is needed
+                    if region == 'us-west-2':
                         self.s3_client.create_bucket(Bucket=self.bucket_name)
                     else:
                         self.s3_client.create_bucket(
@@ -84,11 +82,9 @@ class S3AndMongoDBJokeManager:
     #         print(f"Error deleting all jokes from database: {e}")
     #         return 0
 
-
     def upload_joke(self, image_filename, joke_text, timestamp, presigned_url):
         """Upload a blessing to S3 and store it in the database"""
         try:
-
             Joke_data = {
                 'filename': image_filename,
                 'text': joke_text,
@@ -96,13 +92,10 @@ class S3AndMongoDBJokeManager:
                 's3_link': presigned_url
             }
             self.collection.insert_one(Joke_data)
-            # print(f"Blessing saved to database with filename {image_filename}")
-
             return image_filename  # Return the filename of the uploaded joke
         except Exception as e:
             print(f"Error uploading joke: {e}")
             return None
-
 
     # def download_blessing(self, filename):
     #     """Fetch a blessing from S3 by filename"""
@@ -127,4 +120,3 @@ class S3AndMongoDBJokeManager:
     #     except Exception as e:
     #         print(f"Error fetching blessing from database: {e}")
     #         return None
-
