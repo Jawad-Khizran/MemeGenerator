@@ -2,9 +2,9 @@
 FROM python:3.9-slim
 
 # Set the working directory in the container
-WORKDIR /app
+WORKDIR /App
 
-COPY . /app
+COPY . /App
 
 # Install git and other necessary system dependencies
 RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
