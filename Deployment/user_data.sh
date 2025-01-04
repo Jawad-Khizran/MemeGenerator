@@ -9,13 +9,13 @@ python3 -m pip install --upgrade pip
 # Install git and clone files to the Web Server
 yum install -y git
 cd
-mkdir App
-cd App
 git clone https://github.com/Jawad-Khizran/MemeGenerator
 
-# Install and run docker
+# Install and run Docker
 yum install docker -y
+yum install docker-compose-plugin -y
 service docker start
 
-docker build -t meme-api .
-docker run -p 5000:5000 meme-api
+cd MemeGenerator/App
+
+docker-compose up
